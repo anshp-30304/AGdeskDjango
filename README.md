@@ -1,7 +1,26 @@
-# Contents
+# Agdesk Farm Management
 
-- [Contents](#contents)
-- [Agdesk Farm Management](#agdesk-farm-management)
+This repository provides the source code for AgDesk Farm Management, a web-based application designed to streamline and optimize farm operations.
+
+To understand the Company Guidelines for Programming, click [here][Guidelines]
+
+In case you can't see the images below, please check `Platform Setup Instructions` in the link above.
+
+To understand the HANDOVER PROCEDURE after you have completed the project, click [here][Handover]
+
+[PostgreSQL]: https://www.postgresql.org/download/
+[Python]: https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe
+[PythonCode]: https://www.w3schools.com/python/
+[Django]: https://docs.djangoproject.com/en/5.1/
+[Guidelines]: https://drive.google.com/drive/folders/1zdl1Sj5JfqQgwdTPyQeEQtGngYgkfSun?usp=drive_link
+[Handover]: https://docs.google.com/document/d/142Xxy49TYRiAM4_kFgRA8mMrsKG7QG4WGfKpyBQtrdE/edit?usp=sharing
+
+`This guide assumes that AgDesk is being configured on a Windows x64-based operating environment`
+
+# Platform Setup Instructions
+
+## Contents
+
 - [Platform Setup Instructions](#platform-setup-instructions)
   - [Install PostGIS Database](#install-postgis-database)
   - [pgAdmin4](#pgadmin4)
@@ -11,31 +30,13 @@
   - [Running the Django Server](#running-the-django-server)
   - [Useful Resources](#useful-resources)
 
-# Agdesk Farm Management
-
-This repository provides the source code for AgDesk Farm Management, a web-based application designed to streamline and optimize farm operations.
-
-`This guide assumes that AgDesk is being configured on a Windows x64 based operating environment`
-
-# Platform Setup Instructions
-
-To understand the Company Guidelines for Programming, click [here][Guidelines]
-
-In case you can't see the images below, please check `Platform Setup Instructions` in the link above.
-
-[PostgreSQL]: https://www.postgresql.org/download/
-[Python]: https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe
-[PythonCode]: https://www.w3schools.com/python/
-[Django]: https://docs.djangoproject.com/en/5.1/
-[Guidelines]: https://drive.google.com/drive/folders/1zdl1Sj5JfqQgwdTPyQeEQtGngYgkfSun?usp=drive_link
-
 ## Install PostGIS Database
 
 - [Install the latest version of PostgreSQL][PostgreSQL]
 - Go with the default settings for everything except for things mentioned below.
   - Set password as `pass`
   - Select `port 5432` (or your port)
-  - Select `PostgreSQL 16 (x64) on port 5432` (or your port) from the drop down menu.
+  - Select `PostgreSQL 16 (x64) on port 5432` (or your port) from the drop-down menu.
 - Check `ADD TO PYTHON PATH` or something similar on one of the pages.
 - When you reach the following page, select the options mentioned below:
   - Expand the Database server option, then ensure that `PostgreSQL (64 bit) v16.4-1` is checked
@@ -67,24 +68,24 @@ In case you can't see the images below, please check `Platform Setup Instruction
 
 ## SQL Shell
 
-- Open `SQL Shell`. Everything in square brackets is the default value. Hit enter to keep the default values. Only change the default value of Database to `agdesk` and Password to `pass` (installation password).
+- Open `SQL Shell`. Everything in square brackets is the default value. Hit Enter to keep the default values. Only change the default value of Database to `agdesk` and Password to `pass` (installation password).
 
   ![Untitled](https://i.imgur.com/6RX5kzO.png)
 
 ## VS CODE EXPLORER
 
-- Navigate to the project's web folder and copy contents of `.env_defaults` onto a new `.env` file.
+- Navigate to the project's web folder and copy the contents of `.env_defaults` onto a new `.env` file.
 - Change the password here if needed
 
 ![gisExtension](https://i.imgur.com/SglJuCT.png)
 
 ## Using Terminal
 
-- Clone this repo and change directory in the terminal to where the repo is stored.
+- Clone this repo and change the directory in the terminal to where the repo is stored.
 - [Install Python version 3.12][Python]
 - Execute the code in a terminal (command prompt for Windows users):
 - Check if Python version 3.12 is installed using `py -0`.
-- Create and activate virtual environment:
+- Create and activate a virtual environment:
 
  ```shell
   py -3.12 -m venv venv
@@ -113,7 +114,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-Upon re-opening PgAdmin4, all of the models from Django should now have a tabular representation in the following directory `Servers -> PostgreSQL 16 -> Databases -> agdesk -> Schemas -> Tables`
+Upon re-opening PgAdmin4, all of the models from Django should now have a tabular representation in the following directory: `Servers -> PostgreSQL 16 -> Databases -> agdesk -> Schemas -> Tables`
 
 ![gisExtension](https://i.imgur.com/5kUDsQ2.png)
 
