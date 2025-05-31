@@ -6,7 +6,7 @@ To understand the Company Guidelines for Programming, click [here][Guidelines]
 
 In case you can't see the images below, please check `Platform Setup Instructions` in the link above.
 
-To understand the HANDOVER PROCEDURE after you have completed the project, click [here][Handover]
+To understand the `>>> HANDOVER PROCEDURE <<<` after you have completed the project, click [here][Handover]
 
 [PostgreSQL]: https://www.postgresql.org/download/
 [Python]: https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe
