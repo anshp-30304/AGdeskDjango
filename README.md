@@ -2,11 +2,9 @@
 
 This repository provides the source code for AgDesk Farm Management, a web-based application designed to streamline and optimize farm operations.
 
-To understand the Company Guidelines for Programming, click [here][Guidelines]
+To understand the [Company Guidelines][Guidelines] for Programming.
 
-In case you can't see the images below, please check `Platform Setup Instructions` in the link above.
-
-To understand the `>>> HANDOVER PROCEDURE <<<` after you have completed the project, click [here][Handover]
+To understand the [HANDOVER PROCEDURE][Handover] after you have completed the project.
 
 [PostgreSQL]: https://www.postgresql.org/download/
 [Python]: https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe
