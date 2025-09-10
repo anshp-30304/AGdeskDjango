@@ -1,0 +1,209 @@
+/* ====== Dashboard Layout ====== */
+.dashboard {
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ====== Header ====== */
+.dashboard-header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.dashboard-description {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* ====== Stats Cards ====== */
+.stats-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stats-card {
+  flex: 1;
+  min-width: 200px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stats-card .card-title {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.stats-card .card-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #111827;
+  margin: 8px 0;
+}
+
+.stats-card .card-subtext {
+  font-size: 12px;
+  color: #10b981;
+}
+
+/* ====== Tree Status Cards ====== */
+.tree-status-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.status-card {
+  flex: 1;
+  min-width: 250px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.status-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Different colors for statuses */
+.healthy-status .status-icon {
+  background: #10b981; /* Green */
+}
+
+.stressed-status .status-icon {
+  background: #f59e0b; /* Yellow */
+}
+
+.unhealthy-status .status-icon {
+  background: #ef4444; /* Red */
+}
+
+.status-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.status-description {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ====== Alerts Section ====== */
+.alerts-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.alerts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.alerts-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.alerts-button {
+  font-size: 14px;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.alerts-button:hover {
+  text-decoration: underline;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.alert-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.pest-icon {
+  background: #ef4444;
+}
+
+.drought-icon {
+  background: #f59e0b;
+}
+
+.nutrient-icon {
+  background: #3b82f6;
+}
+
+.alert-details {
+  flex: 1;
+}
+
+.alert-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.alert-description {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.alert-time {
+  font-size: 12px;
+  color: #9ca3af;
+  white-space: nowrap;
+}

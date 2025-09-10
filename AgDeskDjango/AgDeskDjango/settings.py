@@ -71,7 +71,8 @@ INSTALLED_APPS = [
     "Dashboard"                        ,
     "django_extensions"                ,
     "dashing"                          ,
-    "django_cleanup.apps.CleanupConfig" # This is used to delete media files upon deletion of a model instance
+    "django_cleanup.apps.CleanupConfig",# This is used to delete media files upon deletion of a model instance
+    'Treeminder'
 ]
 
 MIDDLEWARE = [
