@@ -2,6 +2,9 @@
 -- Any previous test data needs to be deleted to prevent id conflicts and maintain consistent tests.
 
 -- DELETE * FROM public."Dashboard_quicklinks" WHERE "id" > 100
+DELETE FROM public."UserAuth_user_farm" WHERE "user_id" = 101;
+DELETE FROM public."UserAuth_user_farm" WHERE "user_id" = 102;
+
 
 DELETE FROM public."FarmAcc_farminfo" WHERE "id" > 100;
 -- DELETE * FROM public."FarmAcc_filecategory" WHERE "id" > 100
@@ -59,6 +62,89 @@ VALUES
 -- 	("id", "fileName", "reviewDate", "file", "fileCategory_id")
 -- VALUES
 -- 	();
+
+
+-- Add the new columns if they don't exist
+ALTER TABLE public."UserAuth_userprofile"
+ADD COLUMN IF NOT EXISTS "jobTitle" VARCHAR(100),
+ADD COLUMN IF NOT EXISTS "workingLocation" VARCHAR(100),
+ADD COLUMN IF NOT EXISTS "role" VARCHAR(50),
+ADD COLUMN IF NOT EXISTS "phoneNumber" VARCHAR(20);
+
+INSERT INTO public."UserAuth_userprofile"
+	("id", "password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "firstName", "lastName", "jobTitle", "workingLocation", "role", "phoneNumber", "currentFarm_id")
+VALUES
+--	"id", "password", "last_login",
+--		"is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active",
+--		"date_joined", "firstName", "lastName", "jobTitle", "workingLocation", "role", "phoneNumber", "farm_id"
+	-- john.smith, G#p9Xz3@
+	(101, 'pbkdf2_sha256$720000$htzWZhuAWM5CmHkp5P85jk$VpYkPB1hLxWHD8LI2eJN5EVj6ITP7kIQ1i0Q2wOS/EA=', '2024-05-27 21:56:53.413704+10',
+		false, 'john.smith'		, 'John'	, 'Smith'	, 'john.smith@greenmeadowsfarm.com'			, false, true ,
+		'2024-05-27 21:56:20.314859+10', NULL, NULL, 'Farm Manager'				, 'On Site', 'Manager'		, '+61 123 456 789', 101),
+	-- sarah.martinez, W8d$Jr4@
+	(102, 'pbkdf2_sha256$720000$uMwo2BqMd196c9G1sBd1G8$3qldjuSTjxOxgCgXu4wXokqPeA3BNOeAJ5B9hSqaUFU=', NULL,
+		false, 'sarah.martinez'	, 'Sarah'	, 'Martinez', 'sarah.martinez@greenmeadowsfarm.com'		, false, true ,
+		'2024-05-27 22:06:48.378544+10', NULL, NULL, 'Agricultural Technician'	, 'On Site', 'Technician'	, '+61 456 789 012', 101),
+	-- matthew.white, H7z@Gp5!
+	(103, 'pbkdf2_sha256$720000$ThV9I28WJNKPn2QDCySiFV$U7fSZN4CAlZ6Ay7DyBDWV86zAex05oM7pvbideHZG7k=', NULL,
+		false, 'matthew.white'	, 'Matthew'	, 'White'	, 'matthew.white@greenmeadowsfarm.com'		, false, true ,
+		'2024-05-27 22:08:00.252852+10', NULL, NULL, 'Crop Manager'				, 'On Site', 'Manager'		, '+61 789 012 345', 101),
+	-- daniel.garcia, S3g@Yt8!
+	(104, 'pbkdf2_sha256$720000$ln0cLdz2l5JRHKGpV6kw6M$pgd7vA4G+O7Gwnv8l8UIxe1+eYz37UPaOZC/15lSWmQ=', NULL,
+		false, 'daniel.garcia'	, 'Daniel'	, 'Garcia'	, 'daniel.garcia@greenmeadowsfarm.com'		, false, false,
+		'2024-05-27 22:09:14.36279+10' , NULL, NULL, 'Orchardist'				, 'On Site', 'Specialist'	, '+61 901 234 567', 101),
+	-- olivia.jones, P3r@Lm6#
+	(105, 'pbkdf2_sha256$720000$4SFgOhQBaAcPD7hm12GRLM$wyeqiCN87IvesmuVouSA0VFoKZnaXmHc5vQsHm0+djU=', NULL,
+		false, 'olivia.jones'	, 'Olivia'	, 'Jones'	, 'olivia.jones@greenmeadowsfarm.com'		, false, true ,
+		'2024-05-27 22:10:33.84915+10' , NULL, NULL, 'Dairy Supervisor'			, 'On Site', 'Supervisor'	, '+61 234 567 890', 101),
+--	"id", "password", "last_login",
+--		"is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active",
+--		"date_joined", "firstName", "lastName", "jobTitle", "workingLocation", "role", "phoneNumber", "farm_id"
+	-- william.smith, M8b!Qz3@
+	(106, 'pbkdf2_sha256$720000$AxSQW8vU8oP7DvBdD4Nlhd$yxYeAIbEBFTwo3vKUbM99EC6TD9XQTZY28/TLyhwgTU=', NULL,
+		false, 'william.smith'	, 'William'	, 'Smith'	, 'william.smith@greenmeadowsfarm.com'		, false, false,
+		'2024-05-27 22:11:53.630949+10', NULL, NULL, 'Farmhand'					, 'On site', 'Farmhand'		, '+61 345 678 901', 101),
+	-- emma.davis, N9c$Wx2!
+	(107, 'pbkdf2_sha256$720000$1togAub6fqYtv61iQ7BVNz$N5ITDeOvRYDNZD7GNsc58HHX26s9kglybz8/8XoOLpM=', NULL,
+		false, 'emma.davis'		, 'Emma'	, 'Davis'	, 'emma.davis@greenmeadowsfarm.com'			, false, true ,
+		'2024-05-27 22:12:53.346354+10', NULL, NULL, 'Specialist'				, 'On site', 'Specialist'	, '+61 456 789 012', 101),
+	-- jack.miller, F5g#Qw9!
+	(108, 'pbkdf2_sha256$720000$E1BT49do994dGyMPaHNvU7$EoV4i7wc3+3RmFilVttJ4v7hKVVvmn17erOzUWYB8oo=', NULL,
+		false, 'jack.miller'	, 'Jack'	, 'Miller'	, 'jack.miller@greenmeadowsfarm.com'		, false, false,
+		'2024-05-27 22:14:39.661002+10', NULL, NULL, 'Field Worker'				, 'On site', 'Worker'		, '+61 456 789 012', 101),
+	-- sophie.wilson, L4p@Rt8!
+	(109, 'pbkdf2_sha256$720000$FRSIsPZCzuJCzKnfYgP3lL$3lQCErj2TN0GDa2qIo6lRSAz/rSlwMLyZDiIkZ4DXrs=', NULL,
+		false, 'sophie.wilson'	, 'Sophie'	, 'Wilson'	, 'sophie.wilson@greenmeadowsfarm.com'		, false, true ,
+		'2024-05-27 22:16:09.119923+10', NULL, NULL, 'Garden Supervisor'		, 'On site', 'Supervisor'	, '+61 678 901 234', 101),
+	-- lucas.brown, T7v@Np2#
+	(110, 'pbkdf2_sha256$720000$KmVmnlWcYRY3D5bbJAcpbj$z4Zy+ONUupL0eGlF4Mg5gkqJ9PUUjzQWlIvZlKsp+qg=', NULL,
+		false, 'lucas.brown'	, 'Lucas'	, 'Brown'	, 'lucas.brown@greenmeadowsfarm.com'		, false, false,
+		'2024-05-27 22:17:29.070465+10', NULL, NULL, 'Harvest Manager'			, 'On site', 'Manager'		, '+61 789 012 345', 101),
+--	"id", "password", "last_login",
+--		"is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active",
+--		"date_joined", "firstName", "lastName", "jobTitle", "workingLocation", "role", "phoneNumber", "farm_id"
+	--T@6bYw8!, emily.johnson
+	(111, 'pbkdf2_sha256$720000$fGIYrUEAX9vXCzKXLtzQHQ$hYzan1tp0TD0FrwByq9q5JcDWDAG3/rs9xtR+NEZoWM=', NULL,
+		false, 'emily.johnson'	, 'Emily'	, 'Johnson'	, 'emily.johnson@rollinghillsranch.com'		, false, true ,
+		'2024-05-27 22:49:21.24416+10' , NULL, NULL, 'Livestock Supervisor'		, 'On Site', 'Supervisor'	, '+61 234 567 890', 101);
+
+INSERT INTO public."UserAuth_userprofile_groups"
+	("id", "userprofile_id", "group_id")
+VALUES -- Need to get proper group_id values, I resolved conflicts by choosing a random value
+	(101, 101, 5),
+	(102, 102, 1),
+	(103, 103, 1),
+	(104, 104, 1),
+	(105, 104, 9),
+	(106, 106, 9),
+	(107, 107, 1),
+	(108, 108, 1),
+	(109, 108, 8),
+	(110, 109, 1),
+	(111, 110, 1),
+	(112, 110, 8),
+	(113, 111, 1),
+	(114, 111, 4);
 
 
 ----- Settings -----
@@ -169,88 +255,6 @@ VALUES
 -- VALUES
 -- 	(1), (2), (3), (4), (5), (6), (7), (8), (9);
 -- Commit;
-
--- Add the new columns if they don't exist
-ALTER TABLE public."UserAuth_userprofile"
-ADD COLUMN IF NOT EXISTS "jobTitle" VARCHAR(100),
-ADD COLUMN IF NOT EXISTS "workingLocation" VARCHAR(100),
-ADD COLUMN IF NOT EXISTS "role" VARCHAR(50),
-ADD COLUMN IF NOT EXISTS "phoneNumber" VARCHAR(20);
-
-INSERT INTO public."UserAuth_userprofile"
-	("id", "password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "firstName", "lastName", "jobTitle", "workingLocation", "role", "phoneNumber", "currentFarm_id")
-VALUES
---	"id", "password", "last_login",
---		"is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active",
---		"date_joined", "firstName", "lastName", "jobTitle", "workingLocation", "role", "phoneNumber", "farm_id"
-	-- john.smith, G#p9Xz3@
-	(101, 'pbkdf2_sha256$720000$htzWZhuAWM5CmHkp5P85jk$VpYkPB1hLxWHD8LI2eJN5EVj6ITP7kIQ1i0Q2wOS/EA=', '2024-05-27 21:56:53.413704+10',
-		false, 'john.smith'		, 'John'	, 'Smith'	, 'john.smith@greenmeadowsfarm.com'			, false, true ,
-		'2024-05-27 21:56:20.314859+10', NULL, NULL, 'Farm Manager'				, 'On Site', 'Manager'		, '+61 123 456 789', 101),
-	-- sarah.martinez, W8d$Jr4@
-	(102, 'pbkdf2_sha256$720000$uMwo2BqMd196c9G1sBd1G8$3qldjuSTjxOxgCgXu4wXokqPeA3BNOeAJ5B9hSqaUFU=', NULL,
-		false, 'sarah.martinez'	, 'Sarah'	, 'Martinez', 'sarah.martinez@greenmeadowsfarm.com'		, false, true ,
-		'2024-05-27 22:06:48.378544+10', NULL, NULL, 'Agricultural Technician'	, 'On Site', 'Technician'	, '+61 456 789 012', 101),
-	-- matthew.white, H7z@Gp5!
-	(103, 'pbkdf2_sha256$720000$ThV9I28WJNKPn2QDCySiFV$U7fSZN4CAlZ6Ay7DyBDWV86zAex05oM7pvbideHZG7k=', NULL, 
-		false, 'matthew.white'	, 'Matthew'	, 'White'	, 'matthew.white@greenmeadowsfarm.com'		, false, true ,
-		'2024-05-27 22:08:00.252852+10', NULL, NULL, 'Crop Manager'				, 'On Site', 'Manager'		, '+61 789 012 345', 101),
-	-- daniel.garcia, S3g@Yt8!
-	(104, 'pbkdf2_sha256$720000$ln0cLdz2l5JRHKGpV6kw6M$pgd7vA4G+O7Gwnv8l8UIxe1+eYz37UPaOZC/15lSWmQ=', NULL,
-		false, 'daniel.garcia'	, 'Daniel'	, 'Garcia'	, 'daniel.garcia@greenmeadowsfarm.com'		, false, false,
-		'2024-05-27 22:09:14.36279+10' , NULL, NULL, 'Orchardist'				, 'On Site', 'Specialist'	, '+61 901 234 567', 101),
-	-- olivia.jones, P3r@Lm6#
-	(105, 'pbkdf2_sha256$720000$4SFgOhQBaAcPD7hm12GRLM$wyeqiCN87IvesmuVouSA0VFoKZnaXmHc5vQsHm0+djU=', NULL,
-		false, 'olivia.jones'	, 'Olivia'	, 'Jones'	, 'olivia.jones@greenmeadowsfarm.com'		, false, true ,
-		'2024-05-27 22:10:33.84915+10' , NULL, NULL, 'Dairy Supervisor'			, 'On Site', 'Supervisor'	, '+61 234 567 890', 101),
---	"id", "password", "last_login",
---		"is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active",
---		"date_joined", "firstName", "lastName", "jobTitle", "workingLocation", "role", "phoneNumber", "farm_id"
-	-- william.smith, M8b!Qz3@
-	(106, 'pbkdf2_sha256$720000$AxSQW8vU8oP7DvBdD4Nlhd$yxYeAIbEBFTwo3vKUbM99EC6TD9XQTZY28/TLyhwgTU=', NULL,
-		false, 'william.smith'	, 'William'	, 'Smith'	, 'william.smith@greenmeadowsfarm.com'		, false, false,
-		'2024-05-27 22:11:53.630949+10', NULL, NULL, 'Farmhand'					, 'On site', 'Farmhand'		, '+61 345 678 901', 101),
-	-- emma.davis, N9c$Wx2!
-	(107, 'pbkdf2_sha256$720000$1togAub6fqYtv61iQ7BVNz$N5ITDeOvRYDNZD7GNsc58HHX26s9kglybz8/8XoOLpM=', NULL, 
-		false, 'emma.davis'		, 'Emma'	, 'Davis'	, 'emma.davis@greenmeadowsfarm.com'			, false, true ,
-		'2024-05-27 22:12:53.346354+10', NULL, NULL, 'Specialist'				, 'On site', 'Specialist'	, '+61 456 789 012', 101),
-	-- jack.miller, F5g#Qw9!
-	(108, 'pbkdf2_sha256$720000$E1BT49do994dGyMPaHNvU7$EoV4i7wc3+3RmFilVttJ4v7hKVVvmn17erOzUWYB8oo=', NULL,
-		false, 'jack.miller'	, 'Jack'	, 'Miller'	, 'jack.miller@greenmeadowsfarm.com'		, false, false,
-		'2024-05-27 22:14:39.661002+10', NULL, NULL, 'Field Worker'				, 'On site', 'Worker'		, '+61 456 789 012', 101),
-	-- sophie.wilson, L4p@Rt8!
-	(109, 'pbkdf2_sha256$720000$FRSIsPZCzuJCzKnfYgP3lL$3lQCErj2TN0GDa2qIo6lRSAz/rSlwMLyZDiIkZ4DXrs=', NULL,
-		false, 'sophie.wilson'	, 'Sophie'	, 'Wilson'	, 'sophie.wilson@greenmeadowsfarm.com'		, false, true ,
-		'2024-05-27 22:16:09.119923+10', NULL, NULL, 'Garden Supervisor'		, 'On site', 'Supervisor'	, '+61 678 901 234', 101),
-	-- lucas.brown, T7v@Np2#
-	(110, 'pbkdf2_sha256$720000$KmVmnlWcYRY3D5bbJAcpbj$z4Zy+ONUupL0eGlF4Mg5gkqJ9PUUjzQWlIvZlKsp+qg=', NULL,
-		false, 'lucas.brown'	, 'Lucas'	, 'Brown'	, 'lucas.brown@greenmeadowsfarm.com'		, false, false,
-		'2024-05-27 22:17:29.070465+10', NULL, NULL, 'Harvest Manager'			, 'On site', 'Manager'		, '+61 789 012 345', 101),
---	"id", "password", "last_login",
---		"is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active",
---		"date_joined", "firstName", "lastName", "jobTitle", "workingLocation", "role", "phoneNumber", "farm_id"
-	--T@6bYw8!, emily.johnson
-	(111, 'pbkdf2_sha256$720000$fGIYrUEAX9vXCzKXLtzQHQ$hYzan1tp0TD0FrwByq9q5JcDWDAG3/rs9xtR+NEZoWM=', NULL,
-		false, 'emily.johnson'	, 'Emily'	, 'Johnson'	, 'emily.johnson@rollinghillsranch.com'		, false, true ,
-		'2024-05-27 22:49:21.24416+10' , NULL, NULL, 'Livestock Supervisor'		, 'On Site', 'Supervisor'	, '+61 234 567 890', 101);
-
-INSERT INTO public."UserAuth_userprofile_groups"
-	("id", "userprofile_id", "group_id")
-VALUES -- Need to get proper group_id values, I resolved conflicts by choosing a random value
-	(101, 101, 5),
-	(102, 102, 1),
-	(103, 103, 1),
-	(104, 104, 1),
-	(105, 104, 9),
-	(106, 106, 9),
-	(107, 107, 1),
-	(108, 108, 1),
-	(109, 108, 8),
-	(110, 109, 1),
-	(111, 110, 1),
-	(112, 110, 8),
-	(113, 111, 1),
-	(114, 111, 4);
 
 -- INSERT INTO public."UserAuth_userprofile_user_permissions"
 -- 	("id", "userprofile_id", "permission_id")
