@@ -1,0 +1,17 @@
+name: Block venv commits
+
+on: [push, pull_request]
+
+jobs:
+  block-venv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check for venv folder
+        run: |
+          if git ls-files | grep -q '^venv/'; then
+            echo "❌ venv folder detected in commit. Please remove it before pushing."
+            exit 1
+          else
+            echo "✅ No venv folder found. Safe to push."
+          fi
