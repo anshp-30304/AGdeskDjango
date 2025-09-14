@@ -14,3 +14,6 @@ def tree_status(request):
 
 def recent_alerts(request):
     return render(request, "Treeminder/partials/recent_alerts.html")
+
+def navigation(request):
+    return render(request, "Treeminder/navigation_bar/navigation.html")

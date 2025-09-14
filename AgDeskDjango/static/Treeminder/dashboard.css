@@ -1,190 +1,167 @@
-/* ====== Dashboard Layout ====== */
-.dashboard {
-  background: #f8fafc;
+/* dashboard.css */
+.dashboard-layout {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  background-color: #f8f9fa;
 }
 
 .dashboard-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* ====== Header ====== */
-.dashboard-header-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* Dashboard header */
+.dashboard-header {
+  margin-bottom: 30px;
 }
 
-.dashboard-title {
-  font-size: 24px;
+.health-dashboard {
+  font-size: 28px;
   font-weight: bold;
-  color: #111827;
+  color: #2c3e50;
+  margin-bottom: 8px;
 }
 
 .dashboard-description {
   font-size: 16px;
-  color: #6b7280;
+  color: #7f8c8d;
 }
 
-/* ====== Stats Cards ====== */
+/* Stats cards */
 .stats-cards {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .stats-card {
-  flex: 1;
-  min-width: 200px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-.stats-card .card-title {
+.card-title {
   font-size: 14px;
-  color: #6b7280;
-}
-
-.stats-card .card-value {
-  font-size: 28px;
-  font-weight: bold;
-  color: #111827;
-  margin: 8px 0;
-}
-
-.stats-card .card-subtext {
-  font-size: 12px;
-  color: #10b981;
-}
-
-/* ====== Tree Status Cards ====== */
-.tree-status-cards {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.status-card {
-  flex: 1;
-  min-width: 250px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.status-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  color: #7f8c8d;
   margin-bottom: 10px;
 }
 
-/* Different colors for statuses */
-.healthy-status .status-icon {
-  background: #10b981; /* Green */
+.card-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5px;
 }
 
-.stressed-status .status-icon {
-  background: #f59e0b; /* Yellow */
+.card-subtext {
+  font-size: 12px;
+  color: #27ae60;
 }
 
-.unhealthy-status .status-icon {
-  background: #ef4444; /* Red */
+/* Tree status cards */
+.tree-status-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.status-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .status-title {
   font-size: 18px;
   font-weight: bold;
-  color: #111827;
-  margin-bottom: 6px;
+  margin: 15px 0 10px;
 }
 
 .status-description {
   font-size: 14px;
-  color: #6b7280;
+  color: #7f8c8d;
+  line-height: 1.5;
 }
 
-/* ====== Alerts Section ====== */
+.healthy-status {
+  border-top: 4px solid #27ae60;
+}
+
+.stressed-status {
+  border-top: 4px solid #f39c12;
+}
+
+.unhealthy-status {
+  border-top: 4px solid #e74c3c;
+}
+
+/* Alerts section */
 .alerts-section {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .alerts-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .alerts-title {
   font-size: 20px;
   font-weight: bold;
-  color: #111827;
+  color: #2c3e50;
 }
 
 .alerts-button {
-  font-size: 14px;
-  color: #2563eb;
+  color: #3498db;
+  font-weight: 500;
   cursor: pointer;
-}
-
-.alerts-button:hover {
-  text-decoration: underline;
-}
-
-.alerts-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
 .alert-item {
   display: flex;
-  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #ecf0f1;
   align-items: center;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 12px;
+}
+
+.alert-item:last-child {
+  border-bottom: none;
 }
 
 .alert-icon {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  margin-right: 12px;
+  margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .pest-icon {
-  background: #ef4444;
+  background-color: #e74c3c;
 }
 
 .drought-icon {
-  background: #f59e0b;
+  background-color: #f39c12;
 }
 
 .nutrient-icon {
-  background: #3b82f6;
+  background-color: #3498db;
 }
 
 .alert-details {
@@ -192,18 +169,47 @@
 }
 
 .alert-title {
-  font-size: 16px;
   font-weight: bold;
-  color: #111827;
+  margin-bottom: 5px;
+  color: #2c3e50;
 }
 
 .alert-description {
   font-size: 14px;
-  color: #6b7280;
+  color: #7f8c8d;
 }
 
 .alert-time {
-  font-size: 12px;
-  color: #9ca3af;
-  white-space: nowrap;
+  color: #95a5a6;
+  font-size: 13px;
+}
+
+/* Responsive design for dashboard content */
+@media (max-width: 1024px) {
+  .stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tree-status-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .navigation-sidebar {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .dashboard-main {
+    padding: 20px;
+  }
+
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
 }

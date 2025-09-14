@@ -1,47 +1,59 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'Treeminder/vars.css' %}">
+<link rel="stylesheet" href="{% static 'Treeminder/navigation.css' %}">
 <link rel="stylesheet" href="{% static 'Treeminder/dashboard.css' %}">
  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
-<div class="dashboard">
-  <div class="dashboard-container">
-<div class="dashboard-header-section"
-    hx-target=".dashboard-header-inner"
-     hx-get="{% url 'dashboard_header' %}"
-     hx-trigger="load">
 
-  <div class="dashboard-header-inner">
-    Loading header...
+<div class="dashboard-layout">
+  <!-- Navigation Bar-->
+  <div class="navigation-sidebar"
+       hx-get="{% url 'navigation' %}"
+       hx-trigger="load"
+       hx-target=".navigation-sidebar">
+    <div class="navigation-inner">
+      Loading navigation...
+    </div>
   </div>
-</div>
 
-<div class="stats-cards"
-     hx-get="{% url 'stats_cards' %}"
-     hx-trigger="load"
-hx-target=".stats-cards"
->
-  <div class="stats-cards-inner">
-    Loading stats...
-  </div>
-</div>
+  <!-- Main content area -->
+  <div class="dashboard-main">
+    <div class="dashboard-container">
+      <div class="dashboard-header-section"
+          hx-target=".dashboard-header-inner"
+          hx-get="{% url 'dashboard_header' %}"
+          hx-trigger="load">
+        <div class="dashboard-header-inner">
+          Loading header...
+        </div>
+      </div>
 
-<div class="tree-status-cards"
-     hx-get="{% url 'tree_status' %}"
-     hx-trigger="load"
-hx-target=".tree-status-cards">
-  <div class="tree-status-inner">
-    Loading tree status...
-  </div>
-</div>
+      <div class="stats-cards"
+          hx-get="{% url 'stats_cards' %}"
+          hx-trigger="load"
+          hx-target=".stats-cards">
+        <div class="stats-cards-inner">
+          Loading stats...
+        </div>
+      </div>
 
-<div class="alerts-section"
-     hx-get="{% url 'recent_alerts' %}"
-     hx-trigger="load, every 10s"
-hx-target=".alerts-section ">
-  <div class="alerts-inner">
-    Loading alerts...
-  </div>
-</div>
+      <div class="tree-status-cards"
+          hx-get="{% url 'tree_status' %}"
+          hx-trigger="load"
+          hx-target=".tree-status-cards">
+        <div class="tree-status-inner">
+          Loading tree status...
+        </div>
+      </div>
 
+      <div class="alerts-section"
+          hx-get="{% url 'recent_alerts' %}"
+          hx-trigger="load, every 10s"
+          hx-target=".alerts-section">
+        <div class="alerts-inner">
+          Loading alerts...
+        </div>
+      </div>
+    </div>
   </div>
 </div>
