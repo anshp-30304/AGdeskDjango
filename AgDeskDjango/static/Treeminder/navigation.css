@@ -1,0 +1,52 @@
+/* Navigation styling*/
+.navigation-sidebar {
+  width: 280px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  flex-shrink: 0;
+}
+.nav {
+  padding: 20px 0;
+}
+
+/* Button Highlight */
+.background-vertical-border {
+  background-color: #3498db;
+  border-radius: 4px;
+  margin: 10px 15px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.container2, .container3 {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  margin: 5px 0;
+  color: #ecf0f1;
+  transition: all 0.3s;
+}
+.container2:hover, .container3:hover {
+  background-color: #34495e;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tree-health {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #34495e;
+}
+
+/* Document-icon */
+.file-plus {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  overflow: visible;
+}
