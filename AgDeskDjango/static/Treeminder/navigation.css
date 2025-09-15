@@ -1,52 +1,113 @@
-/* Navigation styling*/
-.navigation-sidebar {
-  width: 280px;
-  background-color: #2c3e50;
-  color: white;
-  padding: 20px 0;
-  flex-shrink: 0;
-}
-.nav {
-  padding: 20px 0;
+/* Sidebar wrapper */
+.sidebar,
+.sidebar * {
+  box-sizing: border-box;
 }
 
-/* Button Highlight */
-.background-vertical-border {
-  background-color: #3498db;
-  border-radius: 4px;
-  margin: 10px 15px;
-  padding: 12px 15px;
+.sidebar {
+  background: var(--primaryBg);
+  height: 100vh;              /* full height */
+  width: 250px;               /* fixed sidebar width */
+  position: fixed;            /* stick it to the left */
+  top: 0;
+  left: 0;
   display: flex;
+  flex-direction: column;
+  gap: 32px;
   align-items: center;
+  justify-content: flex-start;
+  padding: 24px 0;
+  z-index: 1000;              /* stay on top of content */
 }
 
-.container2, .container3 {
+/* Push main content to the right */
+.main-content {
+  margin-left: 200px;         /* same as sidebar width */
+  padding: 24px;
+  flex: 1;
+  min-height: 100vh;
+  background: #f8fafc;        /* light background for contrast */
+}
+
+/* App title */
+.sidebar-header {
   display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  margin: 5px 0;
-  color: #ecf0f1;
-  transition: all 0.3s;
-}
-.container2:hover, .container3:hover {
-  background-color: #34495e;
-  border-radius: 4px;
-  cursor: pointer;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 24px;
 }
 
-.tree-health {
+.app-title {
+  color: #ffffff;
   font-size: 24px;
-  font-weight: bold;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #34495e;
+  line-height: 28.8px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-/* Document-icon */
-.file-plus {
-  flex-shrink: 0;
+/* Navigation section */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Individual item */
+.nav-item {
+  opacity: 0.8;
+  padding: 8px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+.nav-item.active {
+  opacity: 1;
+  border-right: 4px solid #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Icon + Label */
+.nav-icon {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  width: 24px;
+}
+
+.nav-label a {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.nav-label a:hover {
+  color: #e0f7f7;
+}
+
+/* Special icons */
+.nav-icon img {
   width: 18px;
   height: 18px;
-  position: relative;
-  overflow: visible;
 }

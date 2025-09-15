@@ -1,53 +1,52 @@
-<div class="background">
-  <div class="heading-1">
-    <div class="tree-health">TreeHealth</div>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="app-title">🌳 TreeHealth</div>
   </div>
-  <div class="nav">
-    <div class="background-vertical-border">
-      <div class="container">
-        <div class="div">📊</div>
-      </div>
-      <div class="container">
-        <div class="dashboard">Dashboard</div>
-      </div>
-    </div>
-    <div class="container2">
-      <div class="container">
-        <div class="map-view">🗺️ Map View</div>
-      </div>
-      <div class="container">
-        <div class="div">️</div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-item">
+      <div class="nav-icon">📊</div>
+      <div class="nav-label">
+        <a href="/" hx-get="/dashboard" hx-target="#main-content">Dashboard</a>
       </div>
     </div>
-    <div class="container2">
-      <div class="container">
-        <div class="div">🚨</div>
-      </div>
-      <div class="container">
-        <div class="inventory">Inventory</div>
-      </div>
-    </div>
-    <div class="container2">
-      <div class="container">
-        <div class="div">📈</div>
-      </div>
-      <div class="container">
-        <div class="predictions">Predictions</div>
+
+    <div class="nav-item">
+      <div class="nav-icon">🗺️</div>
+      <div class="nav-label">
+        <a href="maps" hx-get="/map-view">Map View</a>
       </div>
     </div>
-    <div class="container2">
-      <img class="file-plus" src="/static/Images/documents.png" alt="Documents icon"/>
-      <div class="container">
-        <div class="documents">Documents</div>
+
+    <div class="nav-item">
+      <div class="nav-icon">🚨</div>
+      <div class="nav-label">
+        <a href="#" hx-get="/inventory" hx-target="#main-content">Inventory</a>
       </div>
     </div>
-    <div class="container2">
-      <div class="container">
-        <div class="div2">⚙️</div>
-      </div>
-      <div class="container">
-        <div class="settings">Settings</div>
+
+    <div class="nav-item">
+      <div class="nav-icon">📈</div>
+      <div class="nav-label">
+        <a href="#" hx-get="/predictions" hx-target="#main-content">Predictions</a>
       </div>
     </div>
-  </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">
+        <img src="file-plus0.svg" alt="Documents" />
+      </div>
+      <div class="nav-label">
+        <a href="#" hx-get="/documents" hx-target="#main-content">Documents</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">⚙️</div>
+      <div class="nav-label">
+        <a href="#" hx-get="/settings" hx-target="#main-content">Settings</a>
+      </div>
+    </div>
+  </nav>
 </div>
+

@@ -1,91 +1,10 @@
-    /* Figma Styles of your File */
-    :root {
-      /* Colors */
-      --127001-blumine: #196482;
-      --127001-eden: #124559;
-      --127001-geyser: #dee2e6;
-      --127001-gothic: #749baa;
-      --127001-mischka: #ced4da;
-      --127001-pale-sky: #6c757d;
-      --127001-shark: #212529;
-      --127001-smalt-blue: #598392;
-      --127001-white: #ffffff;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-      /* Fonts */
-      --127001-roboto-regular-font-family: Roboto-Regular, sans-serif;
-      --127001-roboto-regular-font-size: 15.375px;
-      --127001-roboto-regular-line-height: 24px;
-      --127001-roboto-regular-font-weight: 400;
-      --127001-roboto-regular-font-style: normal;
-      --127001-roboto-regular-font-family: Roboto-Regular, sans-serif;
-      --127001-roboto-regular-font-size: 15.609375px;
-      --127001-roboto-regular-line-height: 27px;
-      --127001-roboto-regular-font-weight: 400;
-      --127001-roboto-regular-font-style: normal;
-      --127001-roboto-regular-font-family: Roboto-Regular, sans-serif;
-      --127001-roboto-regular-font-size: 16.734375px;
-      --127001-roboto-regular-line-height: 27px;
-      --127001-roboto-regular-font-weight: 400;
-      --127001-roboto-regular-font-style: normal;
-      --127001-roboto-regular-font-family: Roboto-Regular, sans-serif;
-      --127001-roboto-regular-font-size: 17.015625px;
-      --127001-roboto-regular-line-height: 27px;
-      --127001-roboto-regular-font-weight: 400;
-      --127001-roboto-regular-font-style: normal;
-      --127001-roboto-regular-font-family: Roboto-Regular, sans-serif;
-      --127001-roboto-regular-font-size: 17.4375px;
-      --127001-roboto-regular-line-height: 27px;
-      --127001-roboto-regular-font-weight: 400;
-      --127001-roboto-regular-font-style: normal;
-      --127001-roboto-regular-font-family: Roboto-Regular, sans-serif;
-      --127001-roboto-regular-font-size: 17.71875px;
-      --127001-roboto-regular-line-height: 27px;
-      --127001-roboto-regular-font-weight: 400;
-      --127001-roboto-regular-font-style: normal;
-      --127001-roboto-regular-font-family: Roboto-Regular, sans-serif;
-      --127001-roboto-regular-font-size: 18px;
-      --127001-roboto-regular-line-height: 27px;
-      --127001-roboto-regular-font-weight: 400;
-      --127001-roboto-regular-font-style: normal;
-      --127001-font-awesome-5-free-solid-font-family: FontAwesome5Free-Solid,
-        sans-serif;
-      --127001-font-awesome-5-free-solid-font-size: 16px;
-      --127001-font-awesome-5-free-solid-line-height: 16px;
-      --127001-font-awesome-5-free-solid-font-weight: 400;
-      --127001-font-awesome-5-free-solid-font-style: normal;
-      --127001-semantic-cell-font-family: Roboto-Bold, sans-serif;
-      --127001-semantic-cell-font-size: 16px;
-      --127001-semantic-cell-line-height: 24px;
-      --127001-semantic-cell-font-weight: 700;
-      --127001-semantic-cell-font-style: normal;
-      --127001-semantic-heading-2-font-family: Roboto-SemiBold, sans-serif;
-      --127001-semantic-heading-2-font-size: 31.375px;
-      --127001-semantic-heading-2-line-height: 38.4px;
-      --127001-semantic-heading-2-font-weight: 600;
-      --127001-semantic-heading-2-font-style: normal;
-      --127001-semantic-input-font-family: Roboto-Regular, sans-serif;
-      --127001-semantic-input-font-size: 15.375px;
-      --127001-semantic-input-line-height: normal;
-      --127001-semantic-input-font-weight: 400;
-      --127001-semantic-input-font-style: normal;
-      --127001-semantic-link-font-family: Roboto-Bold, sans-serif;
-      --127001-semantic-link-font-size: 30px;
-      --127001-semantic-link-line-height: 45px;
-      --127001-semantic-link-font-weight: 700;
-      --127001-semantic-link-font-style: normal;
-
-      /* Effects */
-    }
-    /* Figma Color Variables of your File */
-    [data-127001-mode="mode-1"] {
-      /* mode-1 */
-      --color-azure-56: #749baa;
-      --color-white-solid: #ffffff;
-      --color-azure-46: #598392;
-      --color-azure-30: #196482;
-      --color-azure-15: #212529;
-      --color-azure-89: #dee2e6;
-      --color-azure-21: #124559;
-      --color-azure-83: #ced4da;
-      --color-grey-46: #6c757d;
-    }
+:root {
+    --primaryBg : #124559;
+}
+body{
+      font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
