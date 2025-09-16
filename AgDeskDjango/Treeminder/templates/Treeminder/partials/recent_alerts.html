@@ -1,16 +1,13 @@
-
-
 <div class="alerts-header">
   <div class="alerts-title">Recent Alerts</div>
   <div class="alerts-button">View All</div>
 </div>
 
-<div  class="alerts-section"
+<div class="alerts-section">
+  <div class="alert-item"
      id="alertId"
      onclick="window.location.href='/treeminder/viewAlert/';"
      onmouseover="this.style.cursor='pointer';">
-
-  <div class="alert-item">
     <div class="alert-icon pest-icon"></div>
     <div class="alert-details">
       <div class="alert-title">Pest Infestation Detected</div>
@@ -21,7 +18,7 @@
     <div class="alert-time">2 hours ago</div>
   </div>
 
-<div class="alert-item" id="alertId" hx-get="./viewAlert" hx-trigger="click" onmouseover="this.style.cursor='pointer';">
+  <div class="alert-item">
     <div class="alert-icon drought-icon"></div>
     <div class="alert-details">
       <div class="alert-title">Drought Stress Warning</div>

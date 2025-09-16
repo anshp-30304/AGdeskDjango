@@ -24,5 +24,7 @@ def inventory(request):
     return render(request, "Treeminder/navigation_bar/navigation.html")
 
 
+
 def viewAlert(request):
-    return  render(request,"Treeminder/viewAlert.html")
+    # Redirect to the URL by path or by name
+    return render(request,'Treeminder/viewAlert.html')
