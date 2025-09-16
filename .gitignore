@@ -1,6 +1,5 @@
 # Ignore everything except your Django project
 venv/
-AgDeskDjango/static/
 AgDeskDjango/media/
 AgDeskDjango/.env
 .idea/
