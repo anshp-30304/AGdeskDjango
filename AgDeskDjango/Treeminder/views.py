@@ -18,7 +18,7 @@ def recent_alerts(request):
 def navigation(request):
     return render(request, "Treeminder/navigation_bar/navigation.html")
 def mapView(request):
-    return render(request, "Treeminder/navigation_bar/navigation.html")
+    return render(request,"Treeminder/navigation_bar/navigation.html")
 
 def inventory(request):
     return render(request, "Treeminder/navigation_bar/navigation.html")
