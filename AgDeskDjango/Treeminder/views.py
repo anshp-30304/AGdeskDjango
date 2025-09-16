@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 def dashboard(request):
     return render(request, "Treeminder/index.html")
@@ -17,3 +17,12 @@ def recent_alerts(request):
 
 def navigation(request):
     return render(request, "Treeminder/navigation_bar/navigation.html")
+def mapView(request):
+    return render(request, "Treeminder/navigation_bar/navigation.html")
+
+def inventory(request):
+    return render(request, "Treeminder/navigation_bar/navigation.html")
+
+
+def viewAlert(request):
+    return  render(request,"Treeminder/viewAlert.html")
