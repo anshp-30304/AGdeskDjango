@@ -1,232 +1,247 @@
 {% load static %}
 
+<link rel="stylesheet" href="{% static 'Treeminder/vars.css' %}">
 <link rel="stylesheet" href="{% static 'Treeminder/viewAlert.css' %}">
+<link rel="stylesheet" href="{% static 'Treeminder/navigation.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7"></script>
 
 <div class="view-alert">
   <div class="container">
-    <div class="main">
 
-      <div class="container5">
-        <div class="container6">
-
-          <div class="heading-12">
-            <div class="alert-details">Alert Details</div>
-          </div>
-        </div>
-        <div class="container7">
-          <div class="background2">
-            <div class="high-priority">High Priority</div>
-          </div>
-          <div class="container2">
-            <div class="detected-2-hours-ago">Detected 2 hours ago</div>
-          </div>
-        </div>
+    <!-- LEFT: Navigation Sidebar -->
+    <div class="sidebar"
+         hx-get="{% url 'navigation' %}"
+         hx-trigger="load"
+         hx-target=".sidebar">
+      <div class="navigation-inner">
+        Loading navigation...
       </div>
-      <div class="container8">
-        <div class="container9">
-          <div class="background-border-shadow">
-            <div class="heading-2">
-              <div class="pest-infestation-detected">
-                Pest Infestation Detected
-              </div>
-            </div>
-            <div class="container10">
-              <div class="container11">
-                <div class="heading-3">
-                  <div class="problem-description">Problem Description</div>
-                </div>
-                <div class="container12">
-                  <div
-                    class="aphid-infestation-detected-on-oak-tree-247-significant-leaf-damage-observed-with-visible-pest-colonies-on-multiple-branches-immediate-intervention-required-to-prevent-spread-to-nearby-trees"
-                  >
-                    Aphid infestation detected on Oak Tree #247. Significant
-                    leaf damage observed with visible pest
-                    <br />
-                    colonies on multiple branches. Immediate intervention
-                    required to prevent spread to nearby trees.
-                  </div>
-                </div>
-              </div>
-              <div class="container11">
-                <div class="heading-3">
-                  <div class="affected-area">Affected Area</div>
-                </div>
-                <div class="container12">
-                  <div
-                    class="north-section-grid-b-4-approximately-15-of-canopy-affected"
-                  >
-                    North section, Grid B-4. Approximately 15% of canopy
-                    affected.
-                  </div>
-                </div>
-              </div>
-              <div class="container11">
-                <div class="heading-3">
-                  <div class="risk-assessment">Risk Assessment</div>
-                </div>
-                <div class="container12">
-                  <div
-                    class="high-risk-of-spread-to-adjacent-trees-within-50-meter-radius-potential-for-significant-ecosystem-impact-if-left-untreated"
-                  >
-                    High risk of spread to adjacent trees within 50-meter
-                    radius. Potential for significant ecosystem
-                    <br />
-                    impact if left untreated.
-                  </div>
-                </div>
-              </div>
+    </div>
+
+    <!-- RIGHT: Main content -->
+    <div class="main-content">
+      <div class="alert-content">
+        <div class="container5">
+          <div class="container6">
+            <div class="heading-12">
+              <div class="alert-details">Alert Details</div>
             </div>
           </div>
-          <div class="background-border-shadow2">
-            <div class="heading-2">
-              <div class="recommended-actions">Recommended Actions</div>
+          <div class="container7">
+            <div class="background2">
+              <div class="high-priority">High Priority</div>
             </div>
-            <div class="container13">
-              <div class="container14">
-                <div class="margin">
-                  <div class="background3">
-                    <div class="_1">1</div>
-                  </div>
-                </div>
-                <div class="container2">
-                  <div class="heading-4">
-                    <div class="immediate-treatment">Immediate Treatment</div>
-                  </div>
-                  <div class="container12">
-                    <div
-                      class="apply-targeted-insecticide-treatment-within-24-hours"
-                    >
-                      Apply targeted insecticide treatment within 24 hours
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="container14">
-                <div class="margin">
-                  <div class="background4">
-                    <div class="_2">2</div>
-                  </div>
-                </div>
-                <div class="container2">
-                  <div class="heading-4">
-                    <div class="quarantine-area">Quarantine Area</div>
-                  </div>
-                  <div class="container12">
-                    <div
-                      class="establish-25-meter-quarantine-zone-around-affected-tree"
-                    >
-                      Establish 25-meter quarantine zone around affected tree
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="container14">
-                <div class="margin">
-                  <div class="background5">
-                    <div class="_3">3</div>
-                  </div>
-                </div>
-                <div class="container2">
-                  <div class="heading-4">
-                    <div class="monitor-progress">Monitor Progress</div>
-                  </div>
-                  <div class="container12">
-                    <div class="schedule-follow-up-inspection-in-7-days">
-                      Schedule follow-up inspection in 7 days
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="container2">
+              <div class="detected-2-hours-ago">Detected 2 hours ago</div>
             </div>
           </div>
         </div>
-        <div class="container9">
-          <div class="background-border-shadow3">
-            <div class="heading-3">
-              <div class="tree-information">Tree Information</div>
+        <div class="container8">
+          <div class="container9">
+            <div class="background-border-shadow">
+              <div class="heading-2">
+                <div class="pest-infestation-detected">
+                  Pest Infestation Detected
+                </div>
+              </div>
+              <div class="container10">
+                <div class="container11">
+                  <div class="heading-3">
+                    <div class="problem-description">Problem Description</div>
+                  </div>
+                  <div class="container12">
+                    <div
+                      class="aphid-infestation-detected-on-oak-tree-247-significant-leaf-damage-observed-with-visible-pest-colonies-on-multiple-branches-immediate-intervention-required-to-prevent-spread-to-nearby-trees"
+                    >
+                      Aphid infestation detected on Oak Tree #247. Significant
+                      leaf damage observed with visible pest
+                      <br />
+                      colonies on multiple branches. Immediate intervention
+                      required to prevent spread to nearby trees.
+                    </div>
+                  </div>
+                </div>
+                <div class="container11">
+                  <div class="heading-3">
+                    <div class="affected-area">Affected Area</div>
+                  </div>
+                  <div class="container12">
+                    <div
+                      class="north-section-grid-b-4-approximately-15-of-canopy-affected"
+                    >
+                      North section, Grid B-4. Approximately 15% of canopy
+                      affected.
+                    </div>
+                  </div>
+                </div>
+                <div class="container11">
+                  <div class="heading-3">
+                    <div class="risk-assessment">Risk Assessment</div>
+                  </div>
+                  <div class="container12">
+                    <div
+                      class="high-risk-of-spread-to-adjacent-trees-within-50-meter-radius-potential-for-significant-ecosystem-impact-if-left-untreated"
+                    >
+                      High risk of spread to adjacent trees within 50-meter
+                      radius. Potential for significant ecosystem
+                      <br />
+                      impact if left untreated.
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="container13">
-              <div class="container12">
-                <div class="tree-id">Tree ID</div>
-                <div class="container12">
-                  <div class="_247">#247</div>
-                </div>
+            <div class="background-border-shadow">
+              <div class="heading-2">
+                <div class="recommended-actions">Recommended Actions</div>
               </div>
-              <div class="container12">
-                <div class="species">Species</div>
-                <div class="container12">
-                  <div class="oak-quercus-robur">Oak (Quercus robur)</div>
+              <div class="container13">
+                <div class="container14">
+                  <div class="margin">
+                    <div class="background3">
+                      <div class="_1">1</div>
+                    </div>
+                  </div>
+                  <div class="container2">
+                    <div class="heading-4">
+                      <div class="immediate-treatment">Immediate Treatment</div>
+                    </div>
+                    <div class="container12">
+                      <div
+                        class="apply-targeted-insecticide-treatment-within-24-hours"
+                      >
+                        Apply targeted insecticide treatment within 24 hours
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="container12">
-                <div class="age">Age</div>
-                <div class="container12">
-                  <div class="_15-years">15 years</div>
+                <div class="container14">
+                  <div class="margin">
+                    <div class="background4">
+                      <div class="_2">2</div>
+                    </div>
+                  </div>
+                  <div class="container2">
+                    <div class="heading-4">
+                      <div class="quarantine-area">Quarantine Area</div>
+                    </div>
+                    <div class="container12">
+                      <div
+                        class="establish-25-meter-quarantine-zone-around-affected-tree"
+                      >
+                        Establish 25-meter quarantine zone around affected tree
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="container12">
-                <div class="location">Location</div>
-                <div class="container12">
-                  <div class="north-section-b-4">North Section, B-4</div>
-                </div>
-              </div>
-              <div class="container12">
-                <div class="last-inspection">Last Inspection</div>
-                <div class="container12">
-                  <div class="march-15-2024">March 15, 2024</div>
+                <div class="container14">
+                  <div class="margin">
+                    <div class="background5">
+                      <div class="_3">3</div>
+                    </div>
+                  </div>
+                  <div class="container2">
+                    <div class="heading-4">
+                      <div class="monitor-progress">Monitor Progress</div>
+                    </div>
+                    <div class="container12">
+                      <div class="schedule-follow-up-inspection-in-7-days">
+                        Schedule follow-up inspection in 7 days
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="background-border-shadow3">
-            <div class="heading-3">
-              <div class="status-history">Status History</div>
+          <div class="container9">
+            <div class="background-border-shadow">
+              <div class="heading-3">
+                <div class="tree-information">Tree Information</div>
+              </div>
+              <div class="container13">
+                <div class="container12">
+                  <div class="tree-id">Tree ID</div>
+                  <div class="container12">
+                    <div class="_247">#247</div>
+                  </div>
+                </div>
+                <div class="container12">
+                  <div class="species">Species</div>
+                  <div class="container12">
+                    <div class="oak-quercus-robur">Oak (Quercus robur)</div>
+                  </div>
+                </div>
+                <div class="container12">
+                  <div class="age">Age</div>
+                  <div class="container12">
+                    <div class="_15-years">15 years</div>
+                  </div>
+                </div>
+                <div class="container12">
+                  <div class="location">Location</div>
+                  <div class="container12">
+                    <div class="north-section-b-4">North Section, B-4</div>
+                  </div>
+                </div>
+                <div class="container12">
+                  <div class="last-inspection">Last Inspection</div>
+                  <div class="container12">
+                    <div class="march-15-2024">March 15, 2024</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="background-border-shadow">
+              <div class="heading-3">
+                <div class="status-history">Status History</div>
+              </div>
+              <div class="container13">
+                <div class="container15">
+                  <div class="background6"></div>
+                  <div class="container2">
+                    <div class="container12">
+                      <div class="pest-detected">Pest Detected</div>
+                    </div>
+                    <div class="container12">
+                      <div class="_2-hours-ago">2 hours ago</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container15">
+                  <div class="background7"></div>
+                  <div class="container2">
+                    <div class="container12">
+                      <div class="stress-indicators">Stress Indicators</div>
+                    </div>
+                    <div class="container12">
+                      <div class="_1-week-ago">1 week ago</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container15">
+                  <div class="background8"></div>
+                  <div class="container2">
+                    <div class="container12">
+                      <div class="healthy">Healthy</div>
+                    </div>
+                    <div class="container12">
+                      <div class="_2-weeks-ago">2 weeks ago</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="container13">
-              <div class="container15">
-                <div class="background6"></div>
-                <div class="container2">
-                  <div class="container12">
-                    <div class="pest-detected">Pest Detected</div>
-                  </div>
-                  <div class="container12">
-                    <div class="_2-hours-ago">2 hours ago</div>
-                  </div>
-                </div>
+              <div class="button2">
+                <div class="acknowledge-alert">Acknowledge Alert</div>
               </div>
-              <div class="container15">
-                <div class="background7"></div>
-                <div class="container2">
-                  <div class="container12">
-                    <div class="stress-indicators">Stress Indicators</div>
-                  </div>
-                  <div class="container12">
-                    <div class="_1-week-ago">1 week ago</div>
-                  </div>
-                </div>
+              <div class="button3">
+                <div class="assign-task">Assign Task</div>
               </div>
-              <div class="container15">
-                <div class="background8"></div>
-                <div class="container2">
-                  <div class="container12">
-                    <div class="healthy">Healthy</div>
-                  </div>
-                  <div class="container12">
-                    <div class="_2-weeks-ago">2 weeks ago</div>
-                  </div>
-                </div>
+              <div class="button4">
+                <div class="view-on-map">View on Map</div>
               </div>
-            </div>
-          </div>
-          <div class="container13">
-            <div class="button2">
-              <div class="acknowledge-alert">Acknowledge Alert</div>
-            </div>
-            <div class="button3">
-              <div class="assign-task">Assign Task</div>
-            </div>
-            <div class="button4">
-              <div class="view-on-map">View on Map</div>
             </div>
           </div>
         </div>

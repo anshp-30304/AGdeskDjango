@@ -1,31 +1,74 @@
-<html lang="en">
-    <head title="DocTracker">
-        <link rel="stylesheet" href="styles.css">
-    </head>
+{% load static %}
 
-    <body>
-        <div class="navigation">
-            <h1 style="color: white;">TreeHealth<br />TEMP OBJECT</h1>
+<link rel="stylesheet" href="{% static 'Treeminder/vars.css' %}">
+<link rel="stylesheet" href="{% static 'Treeminder/styles.css' %}">
+<link rel="stylesheet" href="{% static 'Treeminder/navigation.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7"></script>
+
+<div class="document-tracker-layout">
+  <!-- LEFT: Navigation sidebar -->
+  <div class="navigation-sidebar"
+       hx-get="{% url 'navigation' %}"
+       hx-trigger="load"
+       hx-target=".navigation-sidebar">
+    <div class="navigation-inner">
+      Loading navigation...
+    </div>
+  </div>
+
+  <!-- RIGHT: Main content -->
+  <div class="main">
+  <div class="header">
+    <div class="heading-1">
+      <div class="document-tracker">
+        Document
+        <br />
+        Tracker
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="manage-and-track-all-documentation-and-permits-for-your-trees"
+      >
+        Manage and track all documentation and permits for your trees
+      </div>
+    </div>
+  </div>
+  <div class="container5">
+    <div class="add-file-button">
+      <div class="rectangle-5"></div>
+      <img class="add-circle" src="/static/Images/addfile.png" alt="Image not found" />
+      <div class="add-file">Add File</div>
+    </div>
+    <div class="north-grove-permits-file">
+      <div class="rectangle-6"></div>
+      <img class="mask-group"/>
+      <div class="north-grove-permits">North Grove Permits</div>
+      <div class="_3-documents">3 Documents</div>
+      <div class="options">
+        <div class="container6">
+          <div class="open">Open</div>
         </div>
-        <div class="topbar">
-            <h1 style="color:rgba(33, 33, 33, 1); width: 50px; margin-left: 15px;">Document Tracker</h1>
-            <p style="color: rgba(33, 33, 33, 1); margin-left: 15px;">Manage and track all the documents and permits for your trees</p>
-            <hr style="color: rgba(45, 80, 80, 0.330); margin-top: 10px; margin-left: 15px;">
-            <p>
-                <button type="NewFolder" class="trackerButton">New Folder</button>
-                <input type="text" placeholder="TEMP TEXT Search" style="position: relative; padding: 10px; border-radius: 20px; width: 80%">
-            </p>
+      </div>
+      <div class="options2">
+        <div class="container6">
+          <div class="manage">Manage</div>
         </div>
-        <div class="inventory">
-            <button type="UploadFile" class="addButton"><b>Add File</b><br />TEMP TEXT</button>
-            <div class="folderItem">
-                <div class="itemHighlight">
-                    <h2 style="color:rgba(33, 33, 33, 1); line-height: 1; margin: 25px">East End Documents</h2>
-                    <p style="color:rgba(33, 33, 33, 1); line-height: 1; margin: 25px;">2 Items</p>
-                </div>
-                <button type="OpenItem" class="trackerButton">Open</button>
-            </div>
+      </div>
+    </div>
+  </div>
+  <div class="background-shadow">
+    <div class="container7">
+      <div class="container8"></div>
+      <div class="options3">
+        <div class="container6">
+          <div class="new-folder">New Folder</div>
         </div>
-        
-    </body>
-</html>
+      </div>
+    </div>
+    <div class="rectangle-7"></div>
+    <img class="search" src="/static/Images/search.png" alt="Image not found"/>
+    <div class="search2">Search</div>
+  </div>
+  </div>
+</div>

@@ -22,7 +22,7 @@
 
 /* Push main content to the right */
 .main-content {
-  margin-left: 200px;         /* same as sidebar width */
+  margin-left: 250px;         /* same as sidebar width */
   padding: 24px;
   flex: 1;
   min-height: 100vh;

@@ -1,5 +1,5 @@
 
- <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
 
 
 <div class="sidebar">
@@ -35,22 +35,22 @@
         <a href="#" hx-get="/predictions" hx-target="#main-content">Predictions</a>
       </div>
     </div>
-{##}
-{#    <div class="nav-item">#}
-{#      <div class="nav-icon">#}
-{#        <img src="file-plus0.svg" alt="Documents" />#}
-{#      </div>#}
-{#      <div class="nav-label">#}
-{#        <a href="#" hx-get="/documents" hx-target="#main-content">Documents</a>#}
-{#      </div>#}
-{#    </div>#}
-{##}
-{#    <div class="nav-item">#}
-{#      <div class="nav-icon">⚙️</div>#}
-{#      <div class="nav-label">#}
-{#        <a href="#" hx-get="/settings" hx-target="#main-content">Settings</a>#}
-{#      </div>#}
-{#    </div>#}
+
+    <div class="nav-item">
+        <div class="nav-icon">
+        <img src="/static/Images/documents.png" alt="Documents" />
+      </div>
+      <div class="nav-label">
+        <a href="./document" >Documents</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">⚙️</div>
+      <div class="nav-label">
+        <a href="#" hx-get="/settings" hx-target="#main-content">Settings</a>
+      </div>
+    </div>
   </nav>
 </div>
 

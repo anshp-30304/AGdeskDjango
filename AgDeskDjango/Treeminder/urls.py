@@ -13,5 +13,6 @@ urlpatterns = [
     path('nav/', views.navigation, name='navigation'),
     path('mapView/', views.mapView, name='mapView'),
     path('inventory/', views.inventory, name='inventory'),
+    path('document/', views.document, name='document'),
 
 ]

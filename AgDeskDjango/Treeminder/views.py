@@ -24,6 +24,9 @@ def mapView(request):
 def inventory(request):
     return render(request, "Treeminder/navigation_bar/navigation.html")
 
+def document(request):
+    return render(request,"Treeminder/docTracker.html")
+
 def viewAlert(request):
     # Redirect to the URL by path or by name
     return render(request,'Treeminder/viewAlert.html')
