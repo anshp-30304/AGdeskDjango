@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Treeminder · Prediction Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Reuse your existing styles -->
+  <link rel="stylesheet" href="{% static 'Treeminder/vars.css' %}">
+  <link rel="stylesheet" href="{% static 'Treeminder/navigation.css' %}">
+  <link rel="stylesheet" href="{% static 'Treeminder/dashboard.css' %}">
+  <!-- Optional: a small CSS just for prediction page; we’ll add it in Step 2 -->
+  <link rel="stylesheet" href="{% static 'Treeminder/prediction.css' %}">
+
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="dashboard-layout">
+      <!-- Sidebar (loaded the same way as on index) -->
+      <div class="navigation-sidebar"
+           hx-get="{% url 'navigation' %}"
+           hx-trigger="load"
+           hx-target=".navigation-sidebar">
+        <div class="navigation-inner">Loading navigation...</div>
+      </div>
+
+      <!-- Main: Prediction content only -->
+      <div class="main-content">
+        <section class="prediction-shell">
+          <header class="prediction-header">
+            <h1 class="page-title">Prediction Dashboard</h1>
+            <p class="subtle">View predicted growth and yield data with interactive projections</p>
+
+            <div class="chip-row">
+              <button class="chip">Filter by Species</button>
+              <button class="chip">Time Range</button>
+              <button class="chip">Climate Scenario</button>
+            </div>
+          </header>
+
+          <div class="kpi-grid">
+            <article class="kpi-card panel">
+              <div class="kpi-label">Expected Harvest Date</div>
+              <div class="kpi-big">2035</div>
+              <div class="kpi-note ok">Optimal harvest year</div>
+            </article>
+
+            <article class="kpi-card panel">
+              <div class="kpi-label">Projected Timber Volume</div>
+              <div class="kpi-big">1,250 <span class="unit">m³</span></div>
+              <div class="kpi-note ok">+15% from baseline</div>
+            </article>
+
+            <article class="kpi-card panel">
+              <div class="kpi-label">Current Growth Rate</div>
+              <div class="kpi-big">2.3%</div>
+              <div class="kpi-note ok">Annual increase</div>
+            </article>
+
+            <article class="kpi-card panel">
+              <div class="kpi-label">Carbon Credits Potential</div>
+              <div class="kpi-big">450 <span class="unit">tons</span></div>
+              <div class="kpi-note ok">CO₂ equivalent</div>
+            </article>
+          </div>
+
+          <div class="actions-row">
+            <button class="btn-primary">Run New Simulation</button>
+            <!-- Back to Health Dashboard -->
+            <a class="btn-secondary" href="{% url 'treeminder_dashboard' %}">Health Dashboard</a>
+          </div>
+
+          <div class="panel mt-6">
+            <div class="panel-head">
+              <h3>Growth Projections by Year</h3>
+              <span class="muted">Prototype placeholder</span>
+            </div>
+            <div class="chart-placeholder">
+              Interactive growth chart will be displayed here
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

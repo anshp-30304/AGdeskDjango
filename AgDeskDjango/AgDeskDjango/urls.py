@@ -1,3 +1,4 @@
+
 """
 URL configuration for AgDeskDjango project.
 
@@ -21,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from dashing.utils import router 
+from dashing.utils import router
 
 
 # Patterns
@@ -38,7 +39,8 @@ urlpatterns = [
     path(""           , include("assetMaintenance.urls")),
     path("emergency/" , include("Emergency.urls"       )),
     path(""           , include("assetExpenses.urls"   )),
-    path(""           , include(router.urls            ))
+    path(""           , include(router.urls            )),
+    path('treeminder/', include('Treeminder.urls')),
 ]
 
 

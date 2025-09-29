@@ -1,0 +1,56 @@
+
+ <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
+
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="app-title">🌳 TreeHealth</div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-item">
+      <div class="nav-icon">📊</div>
+      <div class="nav-label">
+        <a href="{% url 'treeminder_dashboard' %}">Dashboard</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">🗺️</div>
+      <div class="nav-label">
+        <a href="./mapView" >Map View</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">🚨</div>
+      <div class="nav-label">
+        <a href="#" hx-get="/inventory" hx-target="#main-content">Inventory</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">📈</div>
+      <div class="nav-label">
+        <a href="{% url 'prediction_dashboard_page' %}">Predictions</a>
+      </div>
+    </div>
+{##}
+{#    <div class="nav-item">#}
+{#      <div class="nav-icon">#}
+{#        <img src="file-plus0.svg" alt="Documents" />#}
+{#      </div>#}
+{#      <div class="nav-label">#}
+{#        <a href="#" hx-get="/documents" hx-target="#main-content">Documents</a>#}
+{#      </div>#}
+{#    </div>#}
+{##}
+{#    <div class="nav-item">#}
+{#      <div class="nav-icon">⚙️</div>#}
+{#      <div class="nav-label">#}
+{#        <a href="#" hx-get="/settings" hx-target="#main-content">Settings</a>#}
+{#      </div>#}
+{#    </div>#}
+  </nav>
+</div>
+

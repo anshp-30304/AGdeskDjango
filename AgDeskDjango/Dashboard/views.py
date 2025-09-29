@@ -1,6 +1,5 @@
 # Standard library imports
 from datetime import datetime
-import json
 
 # Django imports
 from django.shortcuts import render

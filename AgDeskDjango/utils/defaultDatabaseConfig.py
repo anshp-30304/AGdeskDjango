@@ -7,7 +7,7 @@ def databaseContext():
         databaseConfig = {
             'NAME': "AgDeskDjango",
             'USER': "postgres",
-            'PASSWORD': "admin123",
+            'PASSWORD': "ap1234",
         }
         return databaseConfig
     except:

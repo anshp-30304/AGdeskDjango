@@ -15,8 +15,6 @@ from UserAuth.models import UserProfile
 from .forms import createTaskForm, taskForm, createKanbanForm, deleteKanbanForm, createKanbanContentForm, updateKanbanContentForm
 from .models import Task, Kanban, KanbanContents
 
-import json
-
 
 # Task Manager
 class taskManager():
