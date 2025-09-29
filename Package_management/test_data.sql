@@ -184,7 +184,7 @@ VALUES
 
 -- INSERT INTO public."Settings_orgsettingsmodel"
 -- 	("id", "timezone", "datetime_format", "temperature_label", "mass_label", "area_label", "length_label")
--- VALUES
+-- VALUE
 -- 	();
 
 ----- Tasks -----
