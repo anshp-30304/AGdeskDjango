@@ -14,4 +14,6 @@ urlpatterns = [
     path('mapView/', views.mapView, name='mapView'),
     path('inventory/', views.inventory, name='inventory'),
 
+    path('predictions/', views.prediction_dashboard_page, name='prediction_dashboard_page'),
+
 ]
