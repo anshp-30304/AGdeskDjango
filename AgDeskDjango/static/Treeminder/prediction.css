@@ -1,0 +1,106 @@
+.prediction-shell { max-width: 1200px; margin: 0 auto; }
+.prediction-header { margin-bottom: 16px; }
+.page-title { font-size: 28px; font-weight: 700; color: #2c3e50; margin: 0; }
+.subtle { color: #6b7280; margin: 6px 0 12px; }
+
+.chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 16px; }
+.chip { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:8px 12px; cursor:pointer; }
+
+.kpi-grid { display:grid; gap:16px; grid-template-columns: repeat(4, minmax(200px,1fr)); margin: 12px 0 8px; }
+.panel { background:#fff; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,.06); padding:18px; }
+.kpi-label { color:#6b7280; font-size:14px; margin-bottom:6px; }
+.kpi-big { font-size:28px; font-weight:700; color:#1f2937; }
+.kpi-big .unit { font-size:16px; font-weight:600; color:#4b5563; margin-left:4px; }
+.kpi-note { font-size:12px; margin-top:6px; }
+.kpi-note.ok { color:#16a34a; }
+
+.actions-row { display:flex; gap:10px; margin: 12px 0 8px; }
+.btn-primary { background:#124559; color:#fff; border:none; border-radius:8px; padding:10px 14px; cursor:pointer; }
+.btn-secondary { background:#fff; border:1px solid #d1d5db; color:#111827; border-radius:8px; padding:10px 14px; text-decoration:none; }
+
+.panel-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.muted { color:#9ca3af; font-size:12px; }
+.chart-placeholder { height:220px; background:#f3f4f6; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#6b7280; }
+
+/* ---- Desktop (default) ---- */
+.sidebar {
+  background: var(--primaryBg);
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px 0;
+  z-index: 1000;
+  /* prepare for mobile slide-in */
+  transform: translateX(0);
+  transition: transform .25s ease;
+}
+
+.main-content {
+  margin-left: 250px;     /* keep content clear of the fixed sidebar */
+  padding: 24px;
+  flex: 1;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* ---- Medium screens (slightly slimmer sidebar) ---- */
+@media (max-width: 1280px) {
+  .sidebar { width: 220px; }
+  .main-content { margin-left: 220px; }
+}
+
+/* ---- Mobile / Tablet: turn sidebar into a drawer ---- */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 280px;                 /* comfy touch target width */
+    transform: translateX(-100%); /* hidden by default */
+  }
+  .sidebar.is-open {
+    transform: translateX(0);     /* slide in when toggled */
+  }
+  .main-content {
+    margin-left: 0;               /* content uses full width */
+  }
+
+  /* Optional: a dim backdrop when drawer is open */
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.25);
+    z-index: 900;
+    display: none;
+  }
+  .backdrop.show { display: block; }
+}
+
+/* Small toggle button */
+.nav-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  height: 36px;
+  width: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+  display: none;                   /* hidden on desktop */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;                   /* above sidebar */
+}
+
+@media (max-width: 1024px) {
+  .nav-toggle { display: inline-flex; }
+}
+
+@media (max-width: 1024px) { .kpi-grid { grid-template-columns: repeat(2, minmax(200px,1fr)); } }
+@media (max-width: 640px)  { .kpi-grid { grid-template-columns: 1fr; } }

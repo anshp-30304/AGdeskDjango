@@ -15,4 +15,6 @@ urlpatterns = [
     path('inventory/', views.inventory, name='inventory'),
     path('document/', views.document, name='document'),
 
+    path('predictions/', views.prediction_dashboard_page, name='prediction_dashboard_page'),
+
 ]

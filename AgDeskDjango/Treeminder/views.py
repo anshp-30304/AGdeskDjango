@@ -30,3 +30,6 @@ def document(request):
 def viewAlert(request):
     # Redirect to the URL by path or by name
     return render(request,'Treeminder/viewAlert.html')
+
+def prediction_dashboard_page(request):
+    return render(request, "Treeminder/prediction_dashboard.html")
