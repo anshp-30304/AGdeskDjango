@@ -14,6 +14,7 @@ urlpatterns = [
     path('mapView/', views.mapView, name='mapView'),
     path('inventory/', views.inventory, name='inventory'),
     path('document/', views.document, name='document'),
+    path('docfiles/', views.docfiles, name='docfiles'),
 
     path('predictions/', views.prediction_dashboard_page, name='prediction_dashboard_page'),
 

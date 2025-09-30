@@ -1,0 +1,109 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'Treeminder/vars.css' %}">
+<link rel="stylesheet" href="{% static 'Treeminder/styles.css' %}">
+<link rel="stylesheet" href="{% static 'Treeminder/navigation.css' %}">
+<link rel="stylesheet" href="{% static 'Treeminder/doc_files.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7"></script>
+
+<div class="document-tracker-layout">
+  <!-- LEFT: Navigation sidebar -->
+  <div class="navigation-sidebar"
+       hx-get="{% url 'navigation' %}"
+       hx-trigger="load"
+       hx-target=".navigation-sidebar">
+    <div class="navigation-inner">
+      Loading navigation...
+    </div>
+  </div>
+
+  <!-- RIGHT: Main content -->
+  <div class="main">
+  <div class="header">
+    <div class="heading-1">
+      <div class="document-tracker">
+        Document
+        <br />
+        Tracker
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="manage-and-track-all-documentation-and-permits-for-your-trees"
+      >
+        Manage and track all documentation and permits for your trees
+      </div>
+    </div>
+  </div>
+  <div class="container5">
+    <div class="add-file-button">
+      <div class="rectangle-5"></div>
+      <img class="add-circle" src="/static/Images/addfile.png" alt="Image not found" />
+      <div class="add-file">Add File</div>
+    </div>
+    <div class="north-grove-permits-file">
+      <div class="rectangle-6"></div>
+      <img class="mask-group"/>
+      <div class="north-grove-land-deed">North Grove Land Deed</div>
+      <div class="options">
+        <div class="container6">
+          <div class="view">View</div>
+        </div>
+      </div>
+      <div class="options2">
+        <div class="container6">
+          <div class="manage">Manage</div>
+        </div>
+      </div>
+    </div>
+    <div class="north-grove-permits-file">
+      <div class="rectangle-62"></div>
+      <div class="north-grove-logging-permit">North Grove Logging Permit</div>
+      <img class="mask-group2"/>
+      <div class="options3">
+        <div class="container6">
+          <div class="view">View</div>
+        </div>
+      </div>
+      <div class="options4">
+        <div class="container6">
+          <div class="manage">Manage</div>
+        </div>
+      </div>
+    </div>
+    <div class="north-grove-permits-file">
+      <div class="rectangle-63"></div>
+      <img class="mask-group3"/>
+      <div class="north-grove-land-survey">North Grove Land Survey</div>
+      <div class="options5">
+        <div class="container6">
+          <div class="view">View</div>
+        </div>
+      </div>
+      <div class="options6">
+        <div class="container6">
+          <div class="manage">Manage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="background-shadow">
+    <div class="container7">
+      <div class="container8"></div>
+      <div class="options7">
+        <div class="container6">
+          <a class="return" href="{% url 'document' %}">Return</a>
+        </div>
+      </div>
+      <div class="options7">
+        <div class="container6">
+          <div class="new-folder">New Folder</div>
+        </div>
+      </div>
+    </div>
+    <div class="rectangle-3"></div>
+    <img class="search3" src="/static/Images/search.png" alt="Image not found"/>
+    <div class="search4">Search</div>
+  </div>
+  </div>
+</div>

@@ -27,6 +27,9 @@ def inventory(request):
 def document(request):
     return render(request,"Treeminder/docTracker.html")
 
+def docfiles(request):
+    return render(request,"Treeminder/partials/doc_files.html")
+
 def viewAlert(request):
     # Redirect to the URL by path or by name
     return render(request,'Treeminder/viewAlert.html')

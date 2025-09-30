@@ -1,0 +1,264 @@
+
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+
+.container3 {
+  opacity: 0.7;
+  padding: 8px 24px 8px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 108px;
+  position: relative;
+}
+
+.north-grove-documents {
+  color: #333333;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 17px;
+  font-weight: 700;
+  position: absolute;
+  left: 14px;
+  top: 7px;
+  width: 949px;
+  height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.north-grove-permits-file {
+  flex-shrink: 0;
+  width: 235px;
+  height: 200px;
+  position: static;
+}
+
+.rectangle-3 {
+  background: #ffffff;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: #333333;
+  border-width: 1px;
+  width: 700px;
+  height: 47px;
+  position: absolute;
+  left: 280px;
+  top: 16px;
+}
+
+.north-grove-land-deed {
+  color: #333333;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  position: absolute;
+  left: 277px;
+  top: 52px;
+  width: 183px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.rectangle-62 {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 235px;
+  height: 200px;
+  position: absolute;
+  left: 510px;
+  top: 32px;
+}
+.north-grove-logging-permit {
+  color: #333333;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  position: absolute;
+  left: 532px;
+  top: 52px;
+  width: 183px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.mask-group2 {
+  width: 235px;
+  height: 77px;
+  position: absolute;
+  left: 510px;
+  top: 155px;
+  overflow: visible;
+  background: #4a7c7e;
+}
+
+.options3 {
+  background: #f5f5f5;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #d1d5db;
+  border-width: 1px;
+  padding: 13px 21px 13px 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  left: 528px;
+  top: 170px;
+}
+.options4 {
+  background: #f5f5f5;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #d1d5db;
+  border-width: 1px;
+  padding: 13px 21px 13px 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  left: 623px;
+  top: 170px;
+}
+.rectangle-63 {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 235px;
+  height: 200px;
+  position: absolute;
+  left: 765px;
+  top: 32px;
+}
+.mask-group3 {
+  width: 235px;
+  height: 77px;
+  position: absolute;
+  left: 765px;
+  top: 155px;
+  overflow: visible;
+  background: #4a7c7e;
+}
+.north-grove-land-survey {
+  color: #333333;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  position: absolute;
+  left: 787px;
+  top: 52px;
+  width: 183px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.options5 {
+  background: #f5f5f5;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #d1d5db;
+  border-width: 1px;
+  padding: 13px 21px 13px 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  left: 783px;
+  top: 170px;
+}
+.options6 {
+  background: #f5f5f5;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #d1d5db;
+  border-width: 1px;
+  padding: 13px 21px 13px 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  left: 878px;
+  top: 170px;
+}
+.group-1 {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-7 {
+  background: #ffffff;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: #333333;
+  border-width: 1px;
+  width: 782px;
+  height: 47px;
+  position: absolute;
+  left: 277px;
+  top: 17px;
+}
+.search {
+  width: 27.36px;
+  height: 24px;
+  position: absolute;
+  left: 291.82px;
+  top: 30px;
+  overflow: visible;
+}
+.search2 {
+  color: #333333;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 17px;
+  font-weight: 400;
+  opacity: 0.8;
+  position: absolute;
+  left: 327.16px;
+  top: 29px;
+  width: 66.12px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
